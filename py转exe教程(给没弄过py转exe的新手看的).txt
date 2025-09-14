@@ -1,0 +1,40 @@
+下面是指令，用的是Anaconda Prompt，回车之前记得把引号去掉，如果有空格和特殊符号，那就得用引号把空格和特殊符号引住，例如“ ” 和 “·”
+按顺序输入：
+1·文件所在盘符，例如“C:”或“D:”
+2·cd “文件所在目录”（例如：cd Python文件目录）
+3·pyinstaller --onefile --windowed --icon=“图标名称.ico” “Python文件名称”.py
+如果不想要图标就输入pyinstaller --onefile --windowed  “Python文件名称”.py
+;
+如果不用窗口，而是用终端(cmd之类的)就输入pyinstaller --onefile --console “Python文件名称”.py
+和pyinstaller --onefile --console  --icon=“图标名称.ico” “Python文件名称”.py
+
+如果是普通终端需要在系统的环境变量中添加解释器路径变量
+1·按下win+S-搜索：查看高级系统设置-回车
+2·在高级系统设置里“高级”一栏最下方位置的“环境变量”-在“系统变量”里找到“Path”变量-双击打开或单击下方“编辑”
+3·新建三个变量；
+【解释器所在目录\Scripts】
+【解释器所在目录】
+【解释器所在目录\bin】
+
+如果不显示图标可以使用以下方法
+解决方案：
+
+方法1：强制刷新图标缓存，重启资源管理器：
+按 Ctrl+Shift+Esc 打开任务管理器
+找到 "Windows资源管理器" → 右键选择 "重新启动"
+
+方法2：重建图标缓存：
+按下win+S，搜索Anaconda Prompt并打开
+在Anaconda Prompt中执行：
+按顺序输入：
+1·cmd
+2·ie4uinit.exe -show
+如果不行，使用下面的指令
+按顺序输入：
+1·cmd
+2·taskkill /f /im explorer.exe
+3·del /f /q "%localappdata%\IconCache.db"
+4·start explorer.exe
+
+方法3：完整刷新系统
+重启电脑（最彻底的方法）
