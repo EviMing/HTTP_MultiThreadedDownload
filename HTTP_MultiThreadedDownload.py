@@ -28,10 +28,10 @@ def MultiThreadedDownload(URL,NumberOfThreads,Path):
     #使用 certifi 提供的根证书
     session_get.verify = certifi.where()
 
-    #使用会话池获取请求头
+    #使用会话池获取元数据
     head = session_get.head(url=URL,headers=Headers)
 
-    #从请求头中获取文件大小
+    #从元数据中获取文件大小
     size = int(head.headers["Content-Length"])
 
     #定义函数_单线程下载
