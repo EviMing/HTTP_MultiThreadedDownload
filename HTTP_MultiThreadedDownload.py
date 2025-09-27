@@ -99,7 +99,7 @@ def MultiThreadedDownload(URL,NumberOfThreads,Path):
         #预先创建稀疏文件，记录空洞索引位置，写入时写入空洞位置。防止后续爆内存。空洞占位为Windows专用
         with open(Path,"wb") as h:
             # Windows：创建稀疏文件，立即只占 1 B
-            msvcrt.setmode(h.fileno(), os.O_BINARY)
+            msvcrt.setmode(h.fileno(),os.O_BINARY)
             #移动文件指针到文件末尾
             h.seek(size - 1)
             h.write(b"\0")
