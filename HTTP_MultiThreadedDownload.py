@@ -277,6 +277,9 @@ except MemoryError:
 except ZeroDivisionError:
     print("[报错:] ZeroDivisionError ： 原因 : 目标文件大小为0时计算单个线程负责数据量")
 
+except KeyboardInterrupt:
+        print("[报错:] KeyboardInterrupt ： 原因 : 用户提前退出")
+
 finally:
     print("按下Q键关闭窗口···")
     while keyboard.read_key().upper() != "Q":
