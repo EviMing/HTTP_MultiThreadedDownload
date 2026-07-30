@@ -67,7 +67,7 @@ def MultiThreadedDownload_Internal(session_get, Headers, size, NumberOfThreads, 
         for future in as_completed(future_list):
             pass
 
-#定义函数_多线程下载
+#定义函数_执行下载
 def run(URL, NumberOfThreads, Path):
 
     #创建会话池，后续用会话池发送请求
@@ -88,6 +88,7 @@ def run(URL, NumberOfThreads, Path):
 
     MultiThreadedDownload_Internal(
         session_get,
+        Headers,
         size,
         NumberOfThreads,
         Path
