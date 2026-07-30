@@ -63,9 +63,8 @@ def MultiThreadedDownload_Internal(session_get, Headers, size, NumberOfThreads, 
             for s,e in ranges
         ]
 
-        #字典推导式每有一个任务完成，将Future丢给对象
         for future in as_completed(future_list):
-            pass
+            future.result()
 
 #定义函数_执行下载
 def run(URL, NumberOfThreads, Path):
